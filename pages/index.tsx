@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
+import { Fragment } from "react";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
 const Home: NextPage = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <Fragment>
+      <Navbar />
+      <Sidebar />
+    </Fragment>
+  );
 };
 
 export default Home;
