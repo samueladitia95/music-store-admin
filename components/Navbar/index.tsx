@@ -6,7 +6,7 @@ const Navbar: NextPage = () => {
     <nav className="sticky top-0 bg-gray border-b-2">
       <div className="px-6 py-2 mx-auto flex justify-between">
         <div className="flex content-center items-center">
-          {/* Logo Menu */}
+          {/* Menu Button */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -22,7 +22,7 @@ const Navbar: NextPage = () => {
             />
           </svg>
           <div className="flex items-center space-x-1">
-            {/* Logo Title */}
+            {/* Logo */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-10 w-10"
