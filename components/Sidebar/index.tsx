@@ -50,9 +50,9 @@ const Sidebar = () => {
       <div
         className={`h-screen w-72 z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 md:static md:transform-none ${
           !isSidebarOpen ? "-translate-x-full" : ""
-        }`}
+        } `}
       >
-        <div className="bg-gray-400  flex flex-col min-h-screen w-72 p-4 md:fixed md:top-0 md:left-0">
+        <div className="bg-bLightSecondary dark:bg-bDarkSecondary dark:text-tDarkPrimary flex flex-col min-h-screen w-72 p-4 md:fixed md:top-0 md:left-0">
           {/* Header  */}
           <div className="flex justify-between">
             {/* Logo */}
@@ -60,7 +60,7 @@ const Sidebar = () => {
               {/* Logo Title */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-10 w-10"
+                className="h-10 w-10 text-accent1"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -72,12 +72,18 @@ const Sidebar = () => {
             {/* Close Button */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 bg-red-200 cursor-pointer md:hidden"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              className="h-10 w-10 cursor-pointer md:hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
               onClick={() => setIsSidebarOpen(false)}
             >
-              <path d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </div>
 
@@ -91,13 +97,13 @@ const Sidebar = () => {
               ))}
             </div>
 
-            <hr />
+            <hr className="border-1 border-current border-opacity-95" />
 
             {/* Footer */}
             <div className="flex flex-col space-y-2">
-              <p className="font-light mb-1">Powered by</p>
+              <p className="mb-1">Powered by :</p>
               <div className="flex flex-col space-y-2">
-                <div className="flex space-x-3">
+                <div className="flex space-x-3 text-sm">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -117,8 +123,10 @@ const Sidebar = () => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
                       key={i}
                     >
                       <path d={logo} />

@@ -5,6 +5,8 @@ export const GlobalContext: Context<GlobalContextType> =
   createContext<GlobalContextType>({
     isSidebarOpen: true,
     setIsSidebarOpen: () => {},
+    isDarkMode: false,
+    setIsDarkMode: () => {},
   });
 
 export const useGlobalContext = (): GlobalContextType =>
@@ -12,9 +14,12 @@ export const useGlobalContext = (): GlobalContextType =>
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
-
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  console.log(isDarkMode, "+++++++++++++++++")
   return (
-    <GlobalContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
+    <GlobalContext.Provider
+      value={{ isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode }}
+    >
       {children}
     </GlobalContext.Provider>
   );

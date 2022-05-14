@@ -2,16 +2,15 @@ import Image from "next/image";
 import { useGlobalContext } from "../../context";
 
 const Navbar = () => {
-  const { setIsSidebarOpen } = useGlobalContext();
-
+  const { setIsSidebarOpen, setIsDarkMode, isDarkMode } = useGlobalContext();
   return (
-    <nav className="sticky top-0 bg-white border-b-2">
+    <nav className="sticky top-0 bg-bLightPrimary border-b-2 dark:bg-bDarkPrimary dark:text-tDarkPrimary border-accent1">
       <div className="px-6 py-2 mx-auto flex justify-between">
         <div className="flex content-center items-center">
           {/* Menu Button */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 md:hidden"
+            className="h-6 w-6 md:hidden cursor-pointer"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -28,7 +27,7 @@ const Navbar = () => {
             {/* Logo */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10"
+              className="h-10 w-10 text-accent1"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -38,7 +37,14 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="px-1">
+        <div className="px-1 flex">
+          {/* Untuk ubah dark mode sementara */}
+          <button
+            className="text-accent1"
+            onClick={() => setIsDarkMode(!isDarkMode)}
+          >
+            Toggle Dark Mode
+          </button>
           <Image
             src="/avatar.png"
             alt="Avatar"
