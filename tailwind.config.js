@@ -3,12 +3,20 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    {
+      pattern: /[h, p]-\d/,
+    },
+  ],
   theme: {
     extend: {
-      container: {
-        center: true,
-        padding: "1.5rem",
+      fontFamily: {
+        display: ["Poppins"],
       },
+    },
+    container: {
+      center: true,
+      padding: "1.5rem",
     },
   },
   plugins: [],
