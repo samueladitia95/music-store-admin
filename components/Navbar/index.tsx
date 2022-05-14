@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useGlobalContext } from "../../context";
 
 const Navbar: NextPage = () => {
+  const { setIsSidebarOpen } = useGlobalContext();
+
   return (
     <nav className="sticky top-0 bg-gray border-b-2">
       <div className="px-6 py-2 mx-auto flex justify-between">
@@ -14,6 +17,7 @@ const Navbar: NextPage = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth="2"
+            onClick={() => setIsSidebarOpen(true)}
           >
             <path
               strokeLinecap="round"

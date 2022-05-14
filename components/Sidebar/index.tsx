@@ -1,9 +1,16 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { useGlobalContext } from "../../context";
 
 const Sidebar: NextPage = () => {
+  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+
   return (
-    <div className="h-screen w-72">
+    <div
+      className={`h-screen w-72 z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 ${
+        !isSidebarOpen ? "-translate-x-full" : ""
+      }`}
+    >
       <div className="bg-gray-400  flex flex-col min-h-screen w-72 p-4">
         {/* Header  */}
         <div className="flex justify-between">
@@ -27,6 +34,7 @@ const Sidebar: NextPage = () => {
             className="h-10 w-10 bg-red-200"
             viewBox="0 0 20 20"
             fill="currentColor"
+            onClick={() => setIsSidebarOpen(false)}
           >
             <path d="M6 18L18 6M6 6l12 12" />
           </svg>
