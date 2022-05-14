@@ -4,3 +4,8 @@ export type NavItemType = {
   logo: string;
   createLink?: string;
 };
+
+export type SocialMediaType = {
+  logo: string;
+  link: string;
+};
