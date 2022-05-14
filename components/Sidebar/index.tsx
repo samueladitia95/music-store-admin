@@ -17,6 +17,7 @@ const navigations: NavItemType[] = [
   {
     category: "Products",
     readLink: "/products",
+    createLink: "/products/add",
     logo: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
   },
   {
@@ -66,7 +67,7 @@ const Sidebar = () => {
               >
                 <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
               </svg>
-              <span className="text-2xl font-medium">StoreCMS</span>
+              <span className="text-2xl font-medium">Music Store</span>
             </div>
 
             {/* Close Button */}
