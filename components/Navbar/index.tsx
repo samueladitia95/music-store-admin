@@ -5,7 +5,7 @@ const Navbar = () => {
   const { setIsSidebarOpen } = useGlobalContext();
 
   return (
-    <nav className="sticky top-0 bg-gray border-b-2">
+    <nav className="sticky top-0 bg-white border-b-2">
       <div className="px-6 py-2 mx-auto flex justify-between">
         <div className="flex content-center items-center">
           {/* Menu Button */}
