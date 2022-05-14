@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
 import Image from "next/image";
 import { useGlobalContext } from "../../context";
 
-const Navbar: NextPage = () => {
+const Navbar = () => {
   const { setIsSidebarOpen } = useGlobalContext();
 
   return (

@@ -1,8 +1,32 @@
-import type { NextPage } from "next";
-import Link from "next/link";
 import { useGlobalContext } from "../../context";
+import NavItem from "./subComponents/NavItem";
+import { NavItemType } from "./type";
 
-const Sidebar: NextPage = () => {
+// Variable normal aja, karena tidak butuh responsive
+const navigations: NavItemType[] = [
+  {
+    category: "Dashboard",
+    readLink: "/",
+    logo: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+  },
+  {
+    category: "Orders",
+    readLink: "/orders",
+    logo: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+  },
+  {
+    category: "Products",
+    readLink: "/products",
+    logo: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+  },
+  {
+    category: "Users",
+    readLink: "/users",
+    logo: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
+  },
+];
+
+const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 
   return (
@@ -45,32 +69,9 @@ const Sidebar: NextPage = () => {
           {/* Navigation */}
           <div className="flex-1 flex flex-col space-y-2 pt-4">
             {/* Navigation Item */}
-            <span className="font-medium">
-              <span
-                v-if="navigation.link"
-                className="flex justify-between p-1 hover:bg-gray-200 rounded"
-              >
-                <Link href="www.google.com">
-                  <span className="flex space-x-2 items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4 6h16M4 12h16M4 18h7"
-                      />
-                    </svg>
-                    <p>Home</p>
-                  </span>
-                </Link>
-              </span>
-            </span>
+            {navigations.map((element: NavItemType, i: number) => (
+              <NavItem navigation={element} key={i} />
+            ))}
           </div>
 
           <hr />
