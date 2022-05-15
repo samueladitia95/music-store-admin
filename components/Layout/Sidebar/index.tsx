@@ -48,8 +48,15 @@ const Sidebar = () => {
   const { pathname } = useRouter();
 
   return (
-    // Extra div buat shadow
     <div>
+      {/* Black div to block the rest of the page when opening sidebar */}
+      <div
+        className={`bg-black opacity-40 fixed h-full w-screen top-0 left-0 md:hidden z-10 ${
+          !isSidebarOpen ? "hidden" : ""
+        }`}
+        onClick={() => setIsSidebarOpen(false)}
+      ></div>
+
       <div
         className={`h-screen w-72 z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 md:static md:transform-none ${
           !isSidebarOpen ? "-translate-x-full" : ""
