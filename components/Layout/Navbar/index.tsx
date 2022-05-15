@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../../context";
 
 const Navbar = () => {
   const { setIsSidebarOpen, setIsDarkMode, isDarkMode } = useGlobalContext();

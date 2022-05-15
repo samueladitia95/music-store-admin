@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../../context";
 import NavItem from "./subComponents/NavItem";
 import { NavItemType, SocialMediaType } from "./type";
 
