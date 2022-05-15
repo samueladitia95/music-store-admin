@@ -20,12 +20,9 @@ const NestedLayout = ({ children }: { children: ReactNode }) => {
       {/* Temporary  */}
       <div className={`font-display md:flex ${isDarkMode ? "dark" : ""}`}>
         <Sidebar />
-        <div className="flex-grow">
+        <div className="flex-grow dark:bg-bDarkPrimary dark:text-tDarkPrimary">
           <Navbar />
-          <div
-            className="container dark:bg-bDarkPrimary dark:text-tDarkPrimary"
-            style={{ minHeight: "200vh" }}
-          >
+          <div className="container" style={{ minHeight: "200vh" }}>
             {children}
           </div>
         </div>
