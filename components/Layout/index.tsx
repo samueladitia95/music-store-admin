@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode, useEffect } from "react";
 import { GlobalProvider, useGlobalContext } from "../../context";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
@@ -7,7 +7,13 @@ import Navbar from "./Navbar";
 //! Kalau gak Contextnya ga akan responsive/jalan
 //! Need to fix in the future, Low Priority
 const NestedLayout = ({ children }: { children: ReactNode }) => {
-  const { isDarkMode } = useGlobalContext();
+  const { isDarkMode, setIsDarkMode } = useGlobalContext();
+
+  useEffect(() => {
+    if (localStorage.getItem("isDarkMode")) {
+      setIsDarkMode(true);
+    }
+  }, [setIsDarkMode]);
 
   return (
     <Fragment>

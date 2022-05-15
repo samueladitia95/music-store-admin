@@ -3,6 +3,16 @@ import { useGlobalContext } from "../../../context";
 
 const Navbar = () => {
   const { setIsSidebarOpen, setIsDarkMode, isDarkMode } = useGlobalContext();
+
+  const toggleDarkMode = (isDarkMode: boolean) => {
+    setIsDarkMode(isDarkMode);
+    if (isDarkMode) {
+      localStorage.setItem("isDarkMode", "on");
+    } else {
+      localStorage.removeItem("isDarkMode");
+    }
+  };
+
   return (
     <nav className="sticky top-0 bg-bLightPrimary border-b-2 dark:bg-bDarkPrimary dark:text-tDarkPrimary border-accent1">
       <div className="px-6 py-2 mx-auto flex justify-between">
@@ -41,7 +51,7 @@ const Navbar = () => {
           {/* Untuk ubah dark mode sementara */}
           <button
             className="text-accent1"
-            onClick={() => setIsDarkMode(!isDarkMode)}
+            onClick={() => toggleDarkMode(!isDarkMode)}
           >
             Toggle Dark Mode
           </button>
