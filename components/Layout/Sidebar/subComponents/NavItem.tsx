@@ -2,11 +2,23 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { NavItemType } from "../type";
 
-const NavItem = ({ navigation }: { navigation: NavItemType }) => {
+const NavItem = ({
+  navigation,
+  isActive,
+}: {
+  navigation: NavItemType;
+  isActive: boolean;
+}) => {
   const { category, readLink, logo, createLink } = navigation;
   return (
     <span className="font-medium text-sm cursor-pointer">
-      <span className="flex justify-between p-1 hover:bg-gray-200 rounded">
+      <span
+        className={`flex justify-between p-1 hover:bg-gray-200 hover:text-tLightPrimary rounded ${
+          isActive
+            ? "bg-accent1 text-bLightSecondary hover:bg-accent1 hover:text-bLightSecondary"
+            : ""
+        }`}
+      >
         <Link href={readLink}>
           <span className="flex space-x-2 items-center">
             {/* Logo */}

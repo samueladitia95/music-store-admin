@@ -1,6 +1,7 @@
 import { useGlobalContext } from "../../../context";
 import NavItem from "./subComponents/NavItem";
 import { NavItemType, SocialMediaType } from "./type";
+import { useRouter } from "next/router";
 
 // Variable normal aja, karena tidak butuh responsive
 const navigations: NavItemType[] = [
@@ -44,6 +45,7 @@ const socialMedias: SocialMediaType[] = [
 
 const Sidebar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+  const { pathname } = useRouter();
 
   return (
     // Extra div buat shadow
@@ -94,7 +96,11 @@ const Sidebar = () => {
             <div className="flex-1 flex flex-col space-y-2 pt-4">
               {/* Navigation Item */}
               {navigations.map((element: NavItemType, i: number) => (
-                <NavItem navigation={element} key={i} />
+                <NavItem
+                  navigation={element}
+                  key={i}
+                  isActive={element.readLink === pathname}
+                />
               ))}
             </div>
 
