@@ -1,6 +1,18 @@
+import { useEffect } from "react";
+import { useGlobalContext } from "../../context";
+
 const Login = () => {
+  const { isDarkMode, setIsDarkMode } = useGlobalContext();
+  console.log(isDarkMode, "HALAMAN LOGIN");
+
+  useEffect(() => {
+    if (localStorage.getItem("isDarkMode")) {
+      setIsDarkMode(true);
+    }
+  }, [setIsDarkMode]);
+
   return (
-    <div className="h-screen w-screen dark">
+    <div className={`h-screen w-screen ${isDarkMode ? "dark" : ""}`}>
       <div className="dark:bg-bDarkPrimary dark:text-tDarkPrimary">
         <div className="container py-10 max-w-xl h-screen flex flex-col space-y-44 items-stretch ">
           <div className="text-4xl font-bold text-center">

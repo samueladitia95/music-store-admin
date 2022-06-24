@@ -1,13 +1,12 @@
 import { Fragment, ReactNode, useEffect } from "react";
-import { GlobalProvider, useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../context";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 
-//! Harus double seperti ini component Layoutnya
-//! Kalau gak Contextnya ga akan responsive/jalan
-//! Need to fix in the future, Low Priority
-const NestedLayout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   const { isDarkMode, setIsDarkMode } = useGlobalContext();
+
+  console.log(isDarkMode, "HALAMAN HOME");
 
   useEffect(() => {
     if (localStorage.getItem("isDarkMode")) {
@@ -28,14 +27,6 @@ const NestedLayout = ({ children }: { children: ReactNode }) => {
         </div>
       </div>
     </Fragment>
-  );
-};
-
-const Layout = ({ children }: { children: ReactNode }) => {
-  return (
-    <GlobalProvider>
-      <NestedLayout>{children}</NestedLayout>
-    </GlobalProvider>
   );
 };
 
