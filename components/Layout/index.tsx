@@ -6,8 +6,6 @@ import Navbar from "./Navbar";
 const Layout = ({ children }: { children: ReactNode }) => {
   const { isDarkMode, setIsDarkMode } = useGlobalContext();
 
-  console.log(isDarkMode, "HALAMAN HOME");
-
   useEffect(() => {
     if (localStorage.getItem("isDarkMode")) {
       setIsDarkMode(true);

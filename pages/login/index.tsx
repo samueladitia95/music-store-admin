@@ -3,7 +3,6 @@ import { useGlobalContext } from "../../context";
 
 const Login = () => {
   const { isDarkMode, setIsDarkMode } = useGlobalContext();
-  console.log(isDarkMode, "HALAMAN LOGIN");
 
   useEffect(() => {
     if (localStorage.getItem("isDarkMode")) {
