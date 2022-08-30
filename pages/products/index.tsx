@@ -1,8 +1,15 @@
-import { Fragment, ReactElement } from "react";
+import { ReactElement } from "react";
 import Layout from "../../components/Layout";
+import { useGlobalContext } from "../../context";
 
 const Home = () => {
-  return <Fragment>INI HALAMAN PRODUCT</Fragment>;
+  const { setPageTitle, pageTitle } = useGlobalContext();
+  setPageTitle("Products");
+  return (
+    <div className="block md:hidden">
+      <p className="text-xl font-medium">{pageTitle}</p>
+    </div>
+  );
 };
 
 //? Setiap halaman yang butuh Sidebar dan Navbar butuh ini

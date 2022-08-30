@@ -2,5 +2,7 @@ export type GlobalContextType = {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (isSidebarOpen: boolean) => void;
   isDarkMode: boolean;
-  setIsDarkMode: (isSidebarOpen: boolean) => void;
+  setIsDarkMode: (isDarkMode: boolean) => void;
+  pageTitle: string;
+  setPageTitle: (pageTitle: string) => void;
 };
