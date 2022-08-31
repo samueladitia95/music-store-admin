@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 
 const Login = () => {
-  const { isDarkMode, setIsDarkMode } = useGlobalContext();
+  const { state, dispatch } = useGlobalContext();
+  const { isDarkMode } = state;
 
   useEffect(() => {
     if (localStorage.getItem("isDarkMode")) {
-      setIsDarkMode(true);
+      dispatch({ type: "TOGGLE_DARK_MODE" });
     }
-  }, [setIsDarkMode]);
+  }, [dispatch]);
 
   return (
     <div className={`h-screen w-screen ${isDarkMode ? "dark" : ""}`}>

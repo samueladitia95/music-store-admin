@@ -2,11 +2,11 @@ import Image from "next/image";
 import { useGlobalContext } from "../../../context";
 
 const Navbar = () => {
-  const { setIsSidebarOpen, setIsDarkMode, isDarkMode, pageTitle } =
-    useGlobalContext();
+  const { state, dispatch } = useGlobalContext();
+  const { isDarkMode, pageTitle } = state;
 
   const toggleDarkMode = (isDarkMode: boolean) => {
-    setIsDarkMode(isDarkMode);
+    dispatch({ type: "TOGGLE_DARK_MODE" });
     if (isDarkMode) {
       localStorage.setItem("isDarkMode", "on");
     } else {
@@ -26,7 +26,7 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth="2"
-            onClick={() => setIsSidebarOpen(true)}
+            onClick={() => dispatch({ type: "TOGGLE_SIDEBAR" })}
           >
             <path
               strokeLinecap="round"

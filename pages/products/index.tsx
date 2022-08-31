@@ -3,11 +3,14 @@ import Layout from "../../components/Layout";
 import { useGlobalContext } from "../../context";
 
 const Home = () => {
-  const { setPageTitle, pageTitle } = useGlobalContext();
-  setPageTitle("Products");
+  const { state, dispatch } = useGlobalContext();
+  dispatch({
+    type: "SET_TITLE",
+    payload: "Products",
+  });
   return (
     <div className="block md:hidden">
-      <p className="text-xl font-medium">{pageTitle}</p>
+      <p className="text-xl font-medium">{state.pageTitle}</p>
     </div>
   );
 };

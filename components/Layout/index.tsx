@@ -4,13 +4,14 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const { isDarkMode, setIsDarkMode } = useGlobalContext();
+  const { state, dispatch } = useGlobalContext();
+  const { isDarkMode } = state;
 
   useEffect(() => {
     if (localStorage.getItem("isDarkMode")) {
-      setIsDarkMode(true);
+      dispatch({ type: "TOGGLE_DARK_MODE" });
     }
-  }, [setIsDarkMode]);
+  }, [dispatch]);
 
   return (
     <Fragment>

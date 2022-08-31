@@ -49,8 +49,11 @@ const socialMedias: SocialMediaType[] = [
 ];
 
 const Sidebar = () => {
-  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
+  const { state, dispatch } = useGlobalContext();
+  const { isSidebarOpen } = state;
   const { pathname } = useRouter();
+
+  const toggleSidebar = (): void => dispatch({ type: "TOGGLE_SIDEBAR" });
 
   return (
     <div>
@@ -59,7 +62,7 @@ const Sidebar = () => {
         className={`bg-black opacity-40 fixed h-full w-screen top-0 left-0 md:hidden z-10 ${
           !isSidebarOpen ? "hidden" : ""
         }`}
-        onClick={() => setIsSidebarOpen(false)}
+        onClick={() => toggleSidebar()}
       ></div>
 
       <div
@@ -92,7 +95,7 @@ const Sidebar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => toggleSidebar()}
             >
               <path
                 strokeLinecap="round"

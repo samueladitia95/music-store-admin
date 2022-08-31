@@ -1,35 +1,33 @@
-import { createContext, useState, ReactNode, useContext, Context } from "react";
-import { GlobalContextType } from "./type";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  Context,
+  useReducer,
+} from "react";
+import { globalReducer } from "./reducer";
+import { GlobalContextType, GlobalState } from "../type";
+
+const initialState: GlobalState = {
+  isDarkMode: false,
+  isSidebarOpen: false,
+  pageTitle: "",
+};
 
 export const GlobalContext: Context<GlobalContextType> =
   createContext<GlobalContextType>({
-    isSidebarOpen: true,
-    setIsSidebarOpen: () => {},
-    isDarkMode: false,
-    setIsDarkMode: () => {},
-    pageTitle: "Hello",
-    setPageTitle: () => {},
+    state: initialState,
+    dispatch: () => null,
   });
 
 export const useGlobalContext = (): GlobalContextType =>
   useContext(GlobalContext);
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [pageTitle, setPageTitle] = useState<string>("");
+  const [state, dispatch] = useReducer(globalReducer, initialState);
 
   return (
-    <GlobalContext.Provider
-      value={{
-        isSidebarOpen,
-        setIsSidebarOpen,
-        isDarkMode,
-        setIsDarkMode,
-        pageTitle,
-        setPageTitle,
-      }}
-    >
+    <GlobalContext.Provider value={{ state, dispatch }}>
       {children}
     </GlobalContext.Provider>
   );
