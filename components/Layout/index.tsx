@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (localStorage.getItem("isDarkMode")) {
-      dispatch({ type: "TOGGLE_DARK_MODE" });
+      dispatch({ type: "SET_TO_DARK_MODE" });
     }
   }, [dispatch]);
 

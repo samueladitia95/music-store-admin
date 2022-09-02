@@ -13,6 +13,11 @@ export function globalReducer(
         ...state,
         isDarkMode: !isDarkMode,
       };
+    case "SET_TO_DARK_MODE":
+      return {
+        ...state,
+        isDarkMode: true,
+      };
     case "TOGGLE_SIDEBAR":
       return {
         ...state,

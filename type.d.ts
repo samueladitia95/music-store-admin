@@ -13,6 +13,7 @@ export type GlobalState = {
 
 export type GlobalActionKind =
   | "TOGGLE_DARK_MODE"
+  | "SET_TO_DARK_MODE"
   | "TOGGLE_SIDEBAR"
   | "SET_TITLE";
 
