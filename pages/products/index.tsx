@@ -1,16 +1,15 @@
 import { ReactElement } from "react";
 import Layout from "../../components/Layout";
-import { useGlobalContext } from "../../context";
+import PageMeta from "../../components/PageMeta";
 
 const Home = () => {
-  const { state, dispatch } = useGlobalContext();
-  dispatch({
-    type: "SET_TITLE",
-    payload: "Products",
-  });
   return (
-    <div className="block md:hidden">
-      <p className="text-xl font-medium">{state.pageTitle}</p>
+    <div>
+      <PageMeta
+        title="Products"
+        description="Music equipment product list"
+        keywords="dimas music, music, equipment"
+      />
     </div>
   );
 };

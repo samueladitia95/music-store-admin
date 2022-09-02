@@ -1,13 +1,19 @@
-import { Fragment, ReactElement } from "react";
+import { ReactElement } from "react";
 import Layout from "../components/Layout";
+import PageMeta from "../components/PageMeta";
 
 const Home = () => {
   return (
-    <Fragment>
+    <>
+      <PageMeta
+        title="Dashboard"
+        description="Dimas Music Dashboard"
+        keywords="dimas music, music, dashboard"
+      />
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel amet, aperiam
       sapiente magnam ex corrupti asperiores ducimus similique magni ullam dicta
       suscipit adipisci libero facere odio repellat nostrum, alias atque.
-    </Fragment>
+    </>
   );
 };
 

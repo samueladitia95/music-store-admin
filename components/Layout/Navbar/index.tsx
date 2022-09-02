@@ -45,19 +45,11 @@ const Navbar = () => {
             <p className="text-2xl font-medium">Music Store</p>
           </div>
           <div className="hidden md:block">
-            <p className="text-xl font-medium">{pageTitle}</p>
+            <p className="text-2xl font-medium">{pageTitle}</p>
           </div>
         </div>
 
         <div className="px-1 flex">
-          {/* Untuk ubah dark mode sementara */}
-          {/* <button
-            className="text-accent1"
-            onClick={() => toggleDarkMode(!isDarkMode)}
-          >
-            Toggle Dark Mode
-          </button> */}
-
           <Image
             src="/avatar.png"
             alt="Avatar"
