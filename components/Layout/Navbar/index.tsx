@@ -1,17 +1,15 @@
 import Image from "next/image";
+import { useState } from "react";
 import { useGlobalContext } from "../../../context";
+import UserOption from "./UserOption";
 
 const Navbar = () => {
+  const [isUserOptionOpen, setIsUserOptionOpen] = useState<boolean>(false);
   const { state, dispatch } = useGlobalContext();
-  const { isDarkMode, pageTitle } = state;
+  const { pageTitle } = state;
 
-  const toggleDarkMode = (isDarkMode: boolean) => {
-    dispatch({ type: "TOGGLE_DARK_MODE" });
-    if (isDarkMode) {
-      localStorage.setItem("isDarkMode", "on");
-    } else {
-      localStorage.removeItem("isDarkMode");
-    }
+  const toggleUserOption = () => {
+    setIsUserOptionOpen(!isUserOptionOpen);
   };
 
   return (
@@ -53,18 +51,26 @@ const Navbar = () => {
 
         <div className="px-1 flex">
           {/* Untuk ubah dark mode sementara */}
-          <button
+          {/* <button
             className="text-accent1"
             onClick={() => toggleDarkMode(!isDarkMode)}
           >
             Toggle Dark Mode
-          </button>
+          </button> */}
+
           <Image
             src="/avatar.png"
             alt="Avatar"
             width={40}
             height={40}
-            className="rounded-full"
+            className="rounded-full cursor-pointer"
+            onClick={() => {
+              toggleUserOption();
+            }}
+          />
+          <UserOption
+            toggleUserOption={toggleUserOption}
+            isOpen={isUserOptionOpen}
           />
         </div>
       </div>
