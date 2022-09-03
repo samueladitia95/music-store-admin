@@ -3,7 +3,8 @@ import NavItem from "./subComponents/NavItem";
 import { NavItemType, SocialMediaType } from "./type";
 import { useRouter } from "next/router";
 
-// Variable normal aja, karena tidak butuh responsive
+//! Variable normal aja, karena tidak butuh reaktive
+//! Biar gampang aja
 const navigations: NavItemType[] = [
   {
     category: "Dashboard",
@@ -48,6 +49,8 @@ const socialMedias: SocialMediaType[] = [
   },
 ];
 
+const sidebarWidth = 60;
+
 const Sidebar = () => {
   const { state, dispatch } = useGlobalContext();
   const { isSidebarOpen } = state;
@@ -66,11 +69,13 @@ const Sidebar = () => {
       ></div>
 
       <div
-        className={`h-screen w-72 z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 md:static md:transform-none ${
+        className={`h-screen w-${sidebarWidth} z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 md:static md:transform-none ${
           !isSidebarOpen ? "-translate-x-full" : ""
         } `}
       >
-        <div className="bg-bLightSecondary dark:bg-bDarkSecondary dark:text-tDarkPrimary flex flex-col min-h-screen w-72 p-4 md:fixed md:top-0 md:left-0">
+        <div
+          className={`w-${sidebarWidth} bg-bLightSecondary dark:bg-bDarkSecondary dark:text-tDarkPrimary flex flex-col min-h-screen p-4 md:fixed md:top-0 md:left-0`}
+        >
           {/* Header  */}
           <div className="flex justify-between">
             {/* Logo */}
