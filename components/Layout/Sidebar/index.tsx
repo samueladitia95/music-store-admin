@@ -49,7 +49,7 @@ const socialMedias: SocialMediaType[] = [
   },
 ];
 
-const sidebarWidth = 60;
+const sidebarWidth = `w-64`;
 
 const Sidebar = () => {
   const { state, dispatch } = useGlobalContext();
@@ -69,12 +69,12 @@ const Sidebar = () => {
       ></div>
 
       <div
-        className={`h-screen w-${sidebarWidth} z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 md:static md:transform-none ${
+        className={`h-screen ${sidebarWidth} z-40 overflow-y-auto transform transition duration-200 ease-in-out fixed top-0 md:static md:transform-none ${
           !isSidebarOpen ? "-translate-x-full" : ""
         } `}
       >
         <div
-          className={`w-${sidebarWidth} bg-bLightSecondary dark:bg-bDarkSecondary dark:text-tDarkPrimary flex flex-col min-h-screen p-4 md:fixed md:top-0 md:left-0`}
+          className={`${sidebarWidth} bg-bLightSecondary dark:bg-bDarkSecondary dark:text-tDarkPrimary flex flex-col min-h-screen p-4 md:fixed md:top-0 md:left-0`}
         >
           {/* Header  */}
           <div className="flex justify-between">

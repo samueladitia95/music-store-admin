@@ -4,13 +4,16 @@ import PageMeta from "../../components/PageMeta";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <PageMeta
         title="Products"
         description="Music equipment product list"
         keywords="dimas music, music, equipment"
       />
-    </div>
+      <div>
+        
+      </div>
+    </>
   );
 };
 
