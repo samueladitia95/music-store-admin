@@ -11,7 +11,24 @@ const Home = () => {
         keywords="dimas music, music, equipment"
       />
       <div>
-        
+        <table className=" text-center">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Stock</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td>1</td>
+            <td>Product 1</td>
+            <td>19</td>
+            <td>
+              <button>Edit</button>
+            </td>
+          </tbody>
+        </table>
       </div>
     </>
   );
