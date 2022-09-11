@@ -21,3 +21,12 @@ export type GlobalAction = {
   type: GlobalActionKind;
   payload?: string;
 };
+
+export type Product = {
+  id: string;
+  name: string;
+  price: number;
+  stock: number;
+  description: string;
+  imageUrl: string;
+};
