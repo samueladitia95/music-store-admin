@@ -29,7 +29,7 @@ export default function PageMeta({
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
       </Head>
-      <div className="block md:hidden">
+      <div className="block md:hidden mt-4 mb-2">
         <p className="text-2xl font-medium">{title}</p>
       </div>
     </>
