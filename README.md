@@ -20,10 +20,9 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Folder Usage Guide
 
-* All page will be in `pages` folder
-* Each page will have it's content stored in a folder named `modules`, So 1 file of page will have 1 file of module
-* Each module will have many components, stored in folder named `components`
-* Components in the `components` will be split into global components and module components
-  * Global components will be used in many modules _(like buttons, inputs, etc)_
-  * Module component will be used in 1 module, Folder name will match/follow pages name
-
+- All page will be in `pages` folder
+- Each page will have it's content stored in a folder named `modules`, So 1 file of page will have 1 file of module
+- Each module will have many components, stored in folder named `components`
+- Components in the `components` will be split into global components and module components
+  - Global components will be used in many modules _(like buttons, inputs, etc)_
+  - Module component will be used in 1 module, Folder name will match/follow pages name
