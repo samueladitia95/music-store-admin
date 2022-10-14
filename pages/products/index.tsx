@@ -1,8 +1,10 @@
 import { ReactElement } from "react";
 import Layout from "../../components/Layout";
 import PageMeta from "../../components/PageMeta";
+import { Product } from "../../type";
+import ProductBoxes from "./subComponents/ProductBoxes";
 
-const Home = () => {
+const Home = ({ products }: { products: Product[] }) => {
   return (
     <>
       <PageMeta
@@ -10,25 +12,11 @@ const Home = () => {
         description="Music equipment product list"
         keywords="dimas music, music, equipment"
       />
-      <div>
-        <table className=" text-center">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Stock</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <td>1</td>
-            <td>Product 1</td>
-            <td>19</td>
-            <td>
-              <button>Edit</button>
-            </td>
-          </tbody>
-        </table>
+      <div className="sm:mt-4 flex flex-col gap-4">
+        {/* List of product boxes */}
+        {products.map((product: Product, index: number) => (
+          <ProductBoxes key={index} product={product} />
+        ))}
       </div>
     </>
   );
@@ -39,5 +27,16 @@ const Home = () => {
 Home.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>;
 };
+
+export async function getStaticProps() {
+  const res = await fetch("http://localhost:3000/products");
+  const products = await res.json();
+
+  return {
+    props: {
+      products,
+    },
+  };
+}
 
 export default Home;
