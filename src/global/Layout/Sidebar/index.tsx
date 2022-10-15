@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../../context";
-import NavItem from "./subComponents/NavItem";
+import NavItem from "./components/NavItem";
 import { NavItemType, SocialMediaType } from "./type";
 import { useRouter } from "next/router";
 

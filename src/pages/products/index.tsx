@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import Layout from "../../global/Layout";
 import PageMeta from "../../global/PageMeta";
 import { Product } from "../../type";
-import ProductBoxes from "./subComponents/ProductBoxes";
+import ProductBoxes from "./components/ProductBoxes";
 
 const Home = ({ products }: { products: Product[] }) => {
   return (
