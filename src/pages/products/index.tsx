@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import Layout from "../../components/Layout";
-import PageMeta from "../../components/PageMeta";
+import Layout from "../../global/Layout";
+import PageMeta from "../../global/PageMeta";
 import { Product } from "../../type";
 import ProductBoxes from "./subComponents/ProductBoxes";
 

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import PageMeta from "../../components/PageMeta";
+import PageMeta from "../../global/PageMeta";
 import { useGlobalContext } from "../../context";
 
 const Login = () => {
