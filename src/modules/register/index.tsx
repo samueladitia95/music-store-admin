@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useGlobalContext } from "../../context";
 import { supabase } from "../../utils/supabaseClient";
 
-const LoginModule = () => {
+const RegisterModule = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -20,7 +20,7 @@ const LoginModule = () => {
 
   const handleSubmit = async () => {
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
       });
@@ -43,7 +43,7 @@ const LoginModule = () => {
             <p>Admin Panel</p>
           </div>
           <div>
-            <p className="text-3xl font-semibold">Log In</p>
+            <p className="text-3xl font-semibold">Register</p>
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -82,16 +82,16 @@ const LoginModule = () => {
                   className="bg-accent1 text-white font-bold py-2 px-4 rounded"
                   type="submit"
                 >
-                  Sign In
+                  Submit
                 </button>
                 <button
                   className="bg-accent1 text-white font-bold py-2 px-4 rounded"
                   type="button"
                   onClick={() => {
-                    router.push("/register");
+                    router.push("/login");
                   }}
                 >
-                  Register
+                  Cancel
                 </button>
               </div>
             </form>
@@ -102,4 +102,4 @@ const LoginModule = () => {
   );
 };
 
-export default LoginModule;
+export default RegisterModule;

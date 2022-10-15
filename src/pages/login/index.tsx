@@ -8,7 +8,7 @@ const Login = () => {
         title="Login"
         description="Music equipment login page"
         keywords="dimas music, music, login"
-        isDisplayTitle
+        disableTitle
       />
       <LoginModule />
     </>
